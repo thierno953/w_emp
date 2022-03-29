@@ -19,7 +19,7 @@ a.btn {
 
 a.btn-dark {
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid orangered;
 }
 a.btn-light {
   background: orangered;

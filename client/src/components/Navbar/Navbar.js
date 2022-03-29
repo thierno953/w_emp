@@ -1,14 +1,32 @@
 import React, { useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
-import { AiOutlineLineHeight } from "react-icons/ai";
 import "./navbar.css";
-import "./utils.css"
+import "./utils.css";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setLogout } from "../../redux/features/authSlice";
+import decode from "jwt-decode";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.auth }));
+
+  const token = user?.token;
+
+  if (token) {
+    const decodedToken = decode(token);
+    if (decodedToken.exp * 1000 < new Date().getTime()) {
+      dispatch(setLogout());
+    }
+  }
+
+  const handleLogout = () => {
+    dispatch(setLogout());
+  };
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -16,10 +34,11 @@ const Navbar = () => {
   return (
     <nav className="navbar container">
       <div className="logo">
-        <AiOutlineLineHeight color="#0a1930" size={33} />
-        <p className="logo-text">
-          H<span>B</span>
-        </p>
+        <Link to="/">
+          <p className="logo-text">
+            TH<span>B</span>
+          </p>
+        </Link>
       </div>
       <menu>
         <ul
@@ -41,19 +60,27 @@ const Navbar = () => {
               Blog
             </Link>
           </li>
+
           <li>
             <Link to="/service" onClick={toggleMenu}>
               Service
             </Link>
           </li>
           <li>
-            <Link to="#subscribe" onClick={toggleMenu}>
-              Subscribe
-            </Link>
-          </li>
-
-          <li className="nav-btn">
-            <Button text={"Learn More"} btnClass={"btn-dark"} href={"#faq"} />
+            {user?.result?._id ? (
+              <div onClick={toggleMenu}>
+                <Link to="/login" onClick={() => handleLogout()}>
+                  Déconnection
+                </Link>
+              </div>
+            ) : (
+              <Button
+                text={"Connection"}
+                btnClass={"btn-dark"}
+                href={"/login"}
+                onClick={toggleMenu}
+              />
+            )}
           </li>
         </ul>
       </menu>

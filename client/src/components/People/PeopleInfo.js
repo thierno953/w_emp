@@ -24,7 +24,7 @@ function PeopleInfo({
         <p className="type">{address}</p>
         <div className="job-info">
           <Link to={`/people/${id}`} className="btn">
-            READ MORE <i className="fa fa-long-arrow-alt-right"></i>
+          Lire <i className="fa fa-long-arrow-alt-right"></i>
           </Link>
         </div>
       </div>

@@ -13,8 +13,8 @@
 }
 
 .logo-text {
-  font-size: 40px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 500;
   color: #0a1930;
 }
 
@@ -81,7 +81,7 @@
     display: block;
     position: absolute;
     list-style: none;
-    background: #0a1930;
+    background:  hsl(210, 22%, 49%);
     left: 0;
     top: 80px;
     width: 100%;

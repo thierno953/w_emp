@@ -25,7 +25,7 @@ function BlogInfo({
             <span>{date}</span>
           </p>
           <Link to={`/blog/${id}`} className="btn">
-            READ MORE <i className="fa fa-long-arrow-alt-right"></i>
+            Lire <i className="fa fa-long-arrow-alt-right"></i>
           </Link>
         </div>
       </div>

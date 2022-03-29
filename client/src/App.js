@@ -10,8 +10,21 @@ import About from "./components/About";
 import SectionService from "./components/sub_page/SectionService";
 import People from "./components/People/People";
 import PeopleSingle from "./components/People/PeopleSingle";
+import Login from "./components/User/Login";
+import Register from "./components/User/Register";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setUser } from "./redux/features/authSlice";
+import Dashboard from "./components/Admin/Dashboard";
 
 function App() {
+  const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  useEffect(() => {
+    dispatch(setUser(user));
+  }, [dispatch, user]);
+
   return (
     <BrowserRouter>
       <>
@@ -24,6 +37,9 @@ function App() {
           <Route path="/service" element={<SectionService />} />
           <Route path="/people" element={<People />} />
           <Route path="/people/:id" element={<PeopleSingle />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <SectionFooter />
       </>
