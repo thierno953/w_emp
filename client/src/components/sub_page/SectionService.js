@@ -15,7 +15,7 @@ function SectionService() {
                     <Title name="Devenir Jobber" para={'Devenez jobber comme vous le souhaitez'} />
                 </div>
                 <div className="services-con">
-                    <ServiceItem icon={account} name={'Inscrivez-vous'} para={"Complétez votre profil en sélectionnant vos compétences Choisissez l'option <alertes jobs> pour recevoir des jobs."} />
+                    <ServiceItem icon={account} name={'Inscrivez-vous'} para={"Complétez votre profil en sélectionnant vos compétences."} />
                     <ServiceItem icon={search} name={'Proposez vos services'} para={'Faites des propositions pour les offres de jobs qui vous intéressent. Proposez vos services en fonction de vos disponibilités. '} />
                     <ServiceItem icon={add} name={'Choisissez votre rémunération'} para={'Définissez votre rémunération horaire lorsque vous répondez à une offre de job. Vous touchez vos revenus immédiatement après réalisation du job.'} />
                 </div>

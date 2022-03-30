@@ -10,9 +10,7 @@ function About() {
           <div className="about_flex">
             <h2>Mentions Légales</h2>
             <p>
-              Ce site est édité par l’association Jeunesse Constructive,
-              immatriculé au RNA, sous le numéro W953011516 OPISTON est un
-              opérateur de plateforme en ligne qui propose un service de mise en
+              Ce site propose un service de mise en
               relation d’Utilisateurs en vue de la conclusion d’un Accord
               relatif à des prestations de services.
             </p>
@@ -36,7 +34,7 @@ const SectionAbout = styled.section`
       }
       p {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 500;
       }
     }
   }

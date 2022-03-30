@@ -10,9 +10,9 @@ function SectionCategory() {
       <InnerLayout>
         <div className="title-con">
           <Title
-            name={"All Categories"}
+            name={"Categories"}
             para={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit, excepturi inventore!"
+              "Voir les propositions"
             }
           />
         </div>

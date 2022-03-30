@@ -50,17 +50,17 @@ const Navbar = () => {
               Accueil
             </Link>
           </li>
-          <li>
-            <Link to="/About" onClick={toggleMenu}>
-              A Propos
-            </Link>
-          </li>
+          
           <li>
             <Link to="/blog" onClick={toggleMenu}>
               Blog
             </Link>
           </li>
-
+          <li>
+            <Link to="/about" onClick={toggleMenu}>
+             À  Propos
+            </Link>
+          </li>
           <li>
             <Link to="/service" onClick={toggleMenu}>
               Service

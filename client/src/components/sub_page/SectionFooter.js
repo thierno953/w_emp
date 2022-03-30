@@ -12,43 +12,47 @@ function SectionFooter() {
           <ul>
             <h4 className="f-title">Découvrez</h4>
             <li className="nav-item">
-              <Link to="/">Devenir prestataire</Link>
-              <Link to="/">Demander un service</Link>
-              <Link to="/people">Meilleurs prestataires</Link>
+              <Link to="/register">Devenir prestataire</Link>
+              <br />
+              <Link to="/people">Demander un service</Link>
+              <br />
             </li>
           </ul>
-          <ul>
-            <h4 className="f-title">Besoin d’aide ? </h4>
-       
-            <li className="nav-item">
-              <a href="#">Contactez-nous</a>
-            </li>
-          </ul>
+
           <ul>
             <h4 className="f-title">À propos </h4>
             <li className="nav-item">
-              <a href="#">Postez un besoin</a>
+              <a href="#">Accueil</a>
+            </li>
+
+            <li className="nav-item">
+              <Link to="/blog">Blog</Link>
             </li>
             <li className="nav-item">
-              <a href="#">A propos</a>
+              <Link to="/about">A propos</Link>
             </li>
             <li className="nav-item">
-              <a href="#">Trouver un job</a>
+              <Link to="/service">Service</Link>
             </li>
+          </ul>
+
+          <ul>
+            <h4 className="f-title">Besoin d’un service </h4>
+
             <li className="nav-item">
-              <Link to="/service">Devenir jobber</Link>
+              
+              <p>thiernobarry554@gmail.com</p><br /><br />
+              <p>+32 466 240 103</p>
+              
             </li>
           </ul>
           <ul>
             <h4 className="f-title">Infos</h4>
             <li className="nav-item">
-              <a href="#">Accueil du site</a>
-            </li>
-            <li className="nav-item">
-              <a href="#">Notes App</a>
-            </li>
-            <li className="nav-item">
-              <a href="#">Features</a>
+              <p>
+                Proposition établie par un Jobber en <br /><br /> réponse à un Besoin
+                d'un Posteur.
+              </p>
             </li>
           </ul>
         </div>
@@ -68,6 +72,7 @@ const SectionFooterStyled = styled.footer`
   .f-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    
     @media screen and (max-width: 1242px) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -83,18 +88,18 @@ const SectionFooterStyled = styled.footer`
     }
     p {
       color: #d8dadf;
-      line-height: 1.9rem;
+      line-height: 1rem;
     }
 
     .f-title {
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
       font-size: 1rem;
       cursor: default;
       color: var(--color-white);
     }
- 
+
     li {
-      a {
+      a, p {
         transition: all 0.3s ease-in-out;
         color: #d8dadf;
         font-size: 14px;

@@ -32,7 +32,7 @@ const PeopleSingle = () => {
                     className="image_prof"
                   />
                   <h6>{item.name}</h6>
-                  <p>{item.fonction}</p>
+                  <p className="fonction">{item.fonction}</p>
                   <Link to="/addPerson">Contact</Link>
                 </div>
                 <div className="profile_info">
@@ -77,13 +77,18 @@ const BlogSection = styled.section`
       }
       h6 {
         font-weight: 700;
+        font-size: 14px;
+      }
+      .fonction {
+        font-size: 14px;
       }
       a {
         background: hsl(210, 22%, 49%);
-        padding: 5px 15px;
+        padding: 3px 15px;
         color: var(--color-white);
         border-radius: 7px;
         margin-top: 15px;
+        font-weight: 600;
       }
     }
       .profile_info {
@@ -92,6 +97,11 @@ const BlogSection = styled.section`
           align-items: center;
           justify-content: space-around;
           flex-wrap: wrap;
+          
+          p {
+            color: var(--color-primary-dark);
+            margin-top: 10px;
+          }
         }
       }
     }

@@ -14,11 +14,7 @@ function ServiceItem({ icon, name, para }) {
 }
 
 const ServiceItemStyled = styled.div`
-  &:hover {
-    .image {
-      border: 2px dashed var(--color-primary);
-    }
-  }
+
   text-align: center;
   .image {
     border-radius: 7px;

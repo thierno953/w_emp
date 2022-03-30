@@ -11,12 +11,13 @@ import {
 } from "../controllers/person.js";
 import auth from "../middleware/auth.js";
 
+router.get("/search", auth, getPersonsBySearch);
 router.get("/", getPersons);
 router.get("/:id", getPerson);
 router.post("/", auth, createPerson);
 router.delete("/:id", auth, deletePerson);
 router.patch("/:id", auth, updatePerson);
 router.get("/userPersons/:id", auth, getPersonsByUser);
-router.get("/search", getPersonsBySearch);
+
 
 export default router;

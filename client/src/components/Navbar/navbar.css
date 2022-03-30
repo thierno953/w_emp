@@ -81,7 +81,7 @@
     display: block;
     position: absolute;
     list-style: none;
-    background:  hsl(210, 22%, 49%);
+    background-color: #272a33;
     left: 0;
     top: 80px;
     width: 100%;
