@@ -33,7 +33,7 @@ const PeopleSingle = () => {
                   />
                   <h6>{item.name}</h6>
                   <p>{item.fonction}</p>
-                  <Link to="/">Contact</Link>
+                  <Link to="/addPerson">Contact</Link>
                 </div>
                 <div className="profile_info">
                   <h4>A propos de moi</h4>
@@ -61,10 +61,11 @@ const BlogSection = styled.section`
     .profile {
       text-align: center;
       position: relative;
-
+     
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      .profile_1 { 
       .image_prof {
         border-radius: 50%;
         margin-bottom: 1rem;
@@ -82,7 +83,9 @@ const BlogSection = styled.section`
         padding: 5px 15px;
         color: var(--color-white);
         border-radius: 7px;
+        margin-top: 15px;
       }
+    }
       .profile_info {
         .flex {
           display: flex;

@@ -95,7 +95,7 @@ const Login = () => {
               clientId={clientId}
               render={(renderProps) => (
                 <button
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", background: "red", color: "#fff" }}
                   color="danger"
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}

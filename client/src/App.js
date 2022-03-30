@@ -18,6 +18,7 @@ import { setUser } from "./redux/features/authSlice";
 import Dashboard from "./components/Admin/Dashboard";
 import PrivateRoute from "./components/Admin/PrivateRoute";
 import AddEditPerson from "./components/Admin/AddEditPerson";
+import Private from "./components/Admin/Private/Private";
 
 function App() {
   const dispatch = useDispatch();
@@ -57,6 +58,7 @@ function App() {
               </PrivateRoute>
             }
           />
+           <Route path="/private" element={<PrivateRoute><Private /></PrivateRoute>} />
           <Route
             path="/dashboard"
             element={

@@ -2,30 +2,35 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   deletePerson,
-  getPersonsByUser,
-} from "../../redux/features/personSlice";
+  getPersons,
+  setCurrentPage,
+} from "../../../redux/features/personSlice";
+import Sidebar from "../Sidebar";
+import Spinner from "../Spinner";
 import { toast } from "react-toastify";
-import { InnerLayout } from "../../Layouts";
+import { InnerLayout } from "../../../Layouts";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Spinner from "./Spinner";
-import Sidebar from "./Sidebar";
+import Pagination from "./Pagination";
 
-const Dashboard = () => {
-  const { user } = useSelector((state) => ({ ...state.auth }));
-  const { userPersons, loading } = useSelector((state) => ({
-    ...state.person,
-  }));
-  const userId = user?.result?._id;
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
+const Private = () => {
+  const { persons, loading, currentPage, numberOfPages } = useSelector(
+    (state) => ({ ...state.person })
+  );
   const dispatch = useDispatch();
+  const query = useQuery();
+  const searchQuery = query.get("searchQuery");
+  const location = useLocation();
 
   useEffect(() => {
-    if (userId) {
-      dispatch(getPersonsByUser(userId));
-    }
-  }, [dispatch, userId]);
+    dispatch(getPersons(currentPage));
+  }, [dispatch, currentPage]);
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this tour ?")) {
@@ -40,24 +45,23 @@ const Dashboard = () => {
   return (
     <SectionJobsStyled>
       <InnerLayout>
-        {userPersons.length === 0 && (
-          <h3 style={{ fontSize: "18px", textAlign: "center" }}>
-            No Person available with the user: {user?.result?.name}
-          </h3>
-        )}
-
-        {userPersons.length > 0 && (
-          <>
-            <h4 className="text-center" style={{ textAlign: "center" }}>
-              Dashboard: {user?.result?.name}
-            </h4>
-          </>
-        )}
         <div className="dash_flex">
           <Sidebar />
           <div className="cards-con">
-            {userPersons &&
-              userPersons.map((item) => {
+            {persons.length === 0 && location.pathname === "/" && (
+              <p className="text-center mb-0" tag="h2">
+                No persons Found
+              </p>
+            )}
+
+            {persons.length === 0 && location.pathname !== "/" && (
+              <p className="text-center mb-0" tag="h2">
+                We couldn't find any matches for "{searchQuery}"
+              </p>
+            )}
+
+            {persons &&
+              persons.map((item) => {
                 return (
                   <JobCardStyled key={item._id} item={item}>
                     <div className="card-con">
@@ -79,15 +83,25 @@ const Dashboard = () => {
                         >
                           <i className="fa-solid fa-trash"></i>
                         </button>
-                        <Link to={`/editPerson/${item._id}`} className="edit">
-                          <i className="fa-solid fa-pen-to-square"></i>
-                        </Link>
                       </div>
                     </div>
                   </JobCardStyled>
                 );
               })}
+
+           <div className="page">
+              {persons.length > 0 && (
+            <Pagination
+              setCurrentPage={setCurrentPage}
+              numberOfPages={numberOfPages}
+              currentPage={currentPage}
+              dispatch={dispatch}
+            />
+          )}
+              </div>
           </div>
+     
+       
         </div>
       </InnerLayout>
     </SectionJobsStyled>
@@ -109,6 +123,7 @@ const SectionJobsStyled = styled.section`
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       }
     }
+
     @media screen and (max-width: 720px) {
       grid-template-columns: 1fr;
     }
@@ -220,4 +235,4 @@ const JobCardStyled = styled.div`
     }
   }
 `;
-export default Dashboard;
+export default Private;

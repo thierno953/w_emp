@@ -16,6 +16,12 @@
   width: 300px;
   padding: 10px 25px;
   outline: none;
+  background: #cecaca;
+  color: #000;
+}
+input, textarea, button {
+  border: none;
+  outline: none;
 }
 
 .login button {

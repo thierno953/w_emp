@@ -66,6 +66,13 @@ const Navbar = () => {
               Service
             </Link>
           </li>
+          {user?.result?._id && (
+            <li>
+              <Link to="/dashboard" onClick={toggleMenu}>
+              Dashboard
+              </Link>
+            </li>
+          )}
           <li>
             {user?.result?._id ? (
               <div onClick={toggleMenu}>
