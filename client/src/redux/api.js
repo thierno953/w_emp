@@ -27,5 +27,3 @@ export const getPersonsByUser = (userId) =>
 
 export const getPersonsBySearch = (searchQuery) =>
   API.get(`/person/search?searchQuery=${searchQuery}`);
-
-

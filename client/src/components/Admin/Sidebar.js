@@ -13,7 +13,7 @@ const Sidebar = () => {
         <Link to="/addPerson">Add</Link>
         </div>
         <div className='add'>
-        <Link to="/private">Private</Link>
+        <Link to="/persons/search">Private</Link>
         </div>
     </div>
     </SectionSideStyled>

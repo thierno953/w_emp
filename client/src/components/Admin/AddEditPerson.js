@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
 import FileBase from "react-file-base64";
+import styled from "styled-components";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createPerson, updatePerson } from "../../redux/features/personSlice";
 import Spinner from "./Spinner";
 import Sidebar from "./Sidebar";
+import { InnerLayout } from "../../Layouts";
 /*eslint-disable*/
 
 const initialState = {
@@ -79,11 +80,12 @@ const AddEditPerson = () => {
   }
 
   return (
-    <div className="container">
+    <SectionJobsStyled>
+    <InnerLayout>
       <div className="add_flex">
         <Sidebar />
-        <div className="login">
-          <form onSubmit={handleSubmit}>
+        <div className="right">
+          <form onSubmit={handleSubmit} className="input-control">
             <h3>{id ? "Update" : "Add"}</h3>
 
             <div>
@@ -150,7 +152,7 @@ const AddEditPerson = () => {
             <div>
               <button
                 type="submit"
-                style={{ width: "100%" }}
+                className="s-btn"
                 disabled={loading ? true : false}
               >
                 Envoyer
@@ -159,8 +161,46 @@ const AddEditPerson = () => {
           </form>
         </div>
       </div>
-    </div>
+    </InnerLayout>
+    </SectionJobsStyled>
   );
 };
+
+const SectionJobsStyled = styled.section` 
+.right {
+  display: flex;
+  align-items: center;
+
+  .input-control {
+    position: relative;
+    font-weight: 500;
+    width: 100%;
+    h3 {
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 1.4rem 2rem;
+      margin: 5px;
+      border: 1px solid var(--color-primary);
+      border-radius: 7px;
+    }
+    .s-btn {
+      color: var(--color-white);
+      font-size: 14px;
+      background-color: var(--color-dark);
+      padding: 1.1rem 1rem;
+      cursor: pointer;
+      border-radius: 7px;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+`;
 
 export default AddEditPerson;

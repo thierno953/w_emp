@@ -13,7 +13,6 @@ import auth from "../middleware/auth.js";
 
 router.get("/", getPersons);
 router.get("/:id", getPerson);
-
 router.post("/", auth, createPerson);
 router.delete("/:id", auth, deletePerson);
 router.patch("/:id", auth, updatePerson);

@@ -130,12 +130,3 @@ export const getPersonsBySearch = async (req, res) => {
   }
 };
 
-export const getPersonsByTag = async (req, res) => {
-  const { tag } = req.params;
-  try {
-    const persons = await PersonModal.find({ tags: { $in: tag } });
-    res.json(persons);
-  } catch (error) {
-    res.status(404).json({ message: "Something went wrong" });
-  }
-};

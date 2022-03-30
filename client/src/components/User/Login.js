@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { GoogleLogin } from "react-google-login";
-
+import styled from "styled-components";
 import { googleSignIn, login } from "../../redux/features/authSlice";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { InnerLayout } from "../../Layouts";
 
 const initialState = {
   email: "",
@@ -57,9 +57,10 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="login">
-        <form onSubmit={handleSubmit}>
+    <SectionJobsStyled>
+    <InnerLayout>
+    <div className="right">
+        <form onSubmit={handleSubmit} className="input-control">
           <h3>Connexion</h3>
           <div>
             <input
@@ -84,7 +85,7 @@ const Login = () => {
           <div>
             <button
               type="submit"
-              style={{ width: "100%" }}
+              className="s-btn"
               disabled={loading ? true : false}
             >
               Se connecter
@@ -95,7 +96,8 @@ const Login = () => {
               clientId={clientId}
               render={(renderProps) => (
                 <button
-                  style={{ width: "100%", background: "red", color: "#fff" }}
+                  style={{ width: "100%", background: "var(--color-primary)", color: "#fff", marginTop: "3px" }}
+                  className="s-btn"
                   color="danger"
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
@@ -115,9 +117,49 @@ const Login = () => {
             </Link>
           </div>
         </form>
-      </div>
-    </div>
+        </div>
+        </InnerLayout>
+    </SectionJobsStyled>
   );
 };
+
+const SectionJobsStyled = styled.section` 
+.right {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+  .input-control {
+    position: relative;
+    font-weight: 500;
+    width: 100%;
+    h3 {
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 1.4rem 2rem;
+      margin: 5px;
+      border: 1px solid var(--color-primary);
+      border-radius: 7px;
+    }
+    .s-btn {
+      color: var(--color-white);
+      font-size: 14px;
+      background-color: #272a33;
+      padding: 1.1rem 1rem;
+      cursor: pointer;
+      border-radius: 7px;
+      width: 100%;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+`;
 
 export default Login;

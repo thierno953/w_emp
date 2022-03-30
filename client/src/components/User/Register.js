@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-
+import styled from "styled-components";
 import { register } from "../../redux/features/authSlice";
+import { InnerLayout } from "../../Layouts";
 
 const initialState = {
   firstName: "",
@@ -40,9 +40,10 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <div className="login">
-        <form onSubmit={handleSubmit}>
+    <SectionJobsStyled>
+    <InnerLayout>
+    <div className="right">
+        <form onSubmit={handleSubmit} className="input-control">
           <h3>Inscription</h3>
           <div>
             <input
@@ -97,7 +98,7 @@ const Register = () => {
           <div>
             <button
               type="submit"
-              style={{ width: "100%" }}
+              className="s-btn"
               disabled={loading ? true : false}
             >
               S'inscrire
@@ -110,9 +111,48 @@ const Register = () => {
             </Link>
           </div>
         </form>
-      </div>
-    </div>
+        </div>
+        </InnerLayout>
+    </SectionJobsStyled>
   );
 };
+
+const SectionJobsStyled = styled.section` 
+.right {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+  .input-control {
+    position: relative;
+    font-weight: 500;
+    width: 100%;
+    h3 {
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 1.4rem 2rem;
+      margin: 5px;
+      border: 1px solid var(--color-primary);
+      border-radius: 7px;
+    }
+    .s-btn {
+      color: var(--color-white);
+      font-size: 14px;
+      background-color: var(--color-dark);
+      padding: 1.1rem 1rem;
+      cursor: pointer;
+      border-radius: 7px;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+`;
 
 export default Register;

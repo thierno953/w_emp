@@ -42,7 +42,7 @@ const Dashboard = () => {
       <InnerLayout>
         {userPersons.length === 0 && (
           <h3 style={{ fontSize: "18px", textAlign: "center" }}>
-            No Person available with the user: {user?.result?.name}
+             Bienvenue: {user?.result?.name}
           </h3>
         )}
 
