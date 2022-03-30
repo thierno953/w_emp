@@ -85,14 +85,13 @@ export const deletePerson = async (req, res) => {
 export const updatePerson = async (req, res) => {
   const { id } = req.params;
   const {
-    fname,
-    lname,
+    creator,
+    name,
     email,
     address,
     phone,
     title,
     description,
-    creator,
     imageFile,
   } = req.body;
   try {
@@ -104,8 +103,7 @@ export const updatePerson = async (req, res) => {
 
     const updatedperson = {
       creator,
-      fname,
-      lname,
+      name,
       email,
       address,
       phone,
@@ -116,6 +114,27 @@ export const updatePerson = async (req, res) => {
     };
     await PersonModal.findByIdAndUpdate(id, updatedperson, { new: true });
     res.json(updatedperson);
+  } catch (error) {
+    res.status(404).json({ message: "Something went wrong" });
+  }
+};
+
+export const getPersonsBySearch = async (req, res) => {
+  const { searchQuery } = req.query;
+  try {
+    const title = new RegExp(searchQuery, "i");
+    const persons = await PersonModal.find({ title });
+    res.json(persons);
+  } catch (error) {
+    res.status(404).json({ message: "Something went wrong" });
+  }
+};
+
+export const getPersonsByTag = async (req, res) => {
+  const { tag } = req.params;
+  try {
+    const persons = await PersonModal.find({ tags: { $in: tag } });
+    res.json(persons);
   } catch (error) {
     res.status(404).json({ message: "Something went wrong" });
   }

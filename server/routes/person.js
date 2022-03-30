@@ -5,6 +5,7 @@ import {
   deletePerson,
   getPerson,
   getPersons,
+  getPersonsBySearch,
   getPersonsByUser,
   updatePerson,
 } from "../controllers/person.js";
@@ -17,5 +18,6 @@ router.post("/", auth, createPerson);
 router.delete("/:id", auth, deletePerson);
 router.patch("/:id", auth, updatePerson);
 router.get("/userPersons/:id", auth, getPersonsByUser);
+router.get("/search", getPersonsBySearch);
 
 export default router;

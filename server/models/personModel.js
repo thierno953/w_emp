@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 const personSchema = mongoose.Schema({
-  fname: String,
-  lname: String,
+  name: String,
   email: String,
   phone: Number,
   address: String,
   title: String,
+  creator: String,
   description: String,
   imageFile: String,
   createdAt: {

@@ -16,6 +16,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setUser } from "./redux/features/authSlice";
 import Dashboard from "./components/Admin/Dashboard";
+import PrivateRoute from "./components/Admin/PrivateRoute";
+import AddEditPerson from "./components/Admin/AddEditPerson";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +41,30 @@ function App() {
           <Route path="/people/:id" element={<PeopleSingle />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/addPerson"
+            element={
+              <PrivateRoute>
+                <AddEditPerson />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/editPerson/:id"
+            element={
+              <PrivateRoute>
+                <AddEditPerson />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <SectionFooter />
       </>

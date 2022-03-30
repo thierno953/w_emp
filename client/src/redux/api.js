@@ -24,3 +24,8 @@ export const updatePerson = (updatedPersonData, id) =>
   API.patch(`/person/${id}`, updatedPersonData);
 export const getPersonsByUser = (userId) =>
   API.get(`/person/userPersons/${userId}`);
+
+export const getPersonsBySearch = (searchQuery) =>
+  API.get(`/person/search?searchQuery=${searchQuery}`);
+
+
