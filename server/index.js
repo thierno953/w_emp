@@ -5,6 +5,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.js";
 import personRouter from "./routes/person.js";
+
 const app = express();
 
 dotenv.config();
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to person API");
 });
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGODB_URL)

@@ -11,7 +11,7 @@ import {
 } from "../controllers/person.js";
 import auth from "../middleware/auth.js";
 
-router.get("/search", auth, getPersonsBySearch);
+router.get("/search", getPersonsBySearch);
 router.get("/", getPersons);
 router.get("/:id", getPerson);
 router.post("/", auth, createPerson);
