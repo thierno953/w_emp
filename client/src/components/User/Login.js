@@ -3,10 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { GoogleLogin } from "react-google-login";
 import styled from "styled-components";
-import { googleSignIn, login } from "../../redux/features/authSlice";
-import { AiFillGoogleCircle } from "react-icons/ai";
+import { login } from "../../redux/features/authSlice";
 import { InnerLayout } from "../../Layouts";
 
 const initialState = {
@@ -21,12 +19,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //prod -> 775610265870-nn901bhdcnmviubs1dj3ufdn1jul042g.apps.googleusercontent.com
 
-  const devEnv = process.env.NODE_ENV !== "production";
-  const clientId = devEnv
-    ? "775610265870-jc47veiba3ebfc968kn0f6bmumdrs32l.apps.googleusercontent.com"
-    : "775610265870-nn901bhdcnmviubs1dj3ufdn1jul042g.apps.googleusercontent.com";
 
   useEffect(() => {
     error && toast.error(error);
@@ -44,17 +37,7 @@ const Login = () => {
     setFormValue({ ...formValue, [name]: value });
   };
 
-  const googleSuccess = (resp) => {
-    const email = resp?.profileObj?.email;
-    const name = resp?.profileObj?.name;
-    const token = resp?.tokenId;
-    const googleId = resp?.googleId;
-    const result = { email, name, token, googleId };
-    dispatch(googleSignIn({ result, navigate, toast }));
-  };
-  const googleFailure = (error) => {
-    toast.error(error);
-  };
+
 
   return (
     <SectionJobsStyled>
@@ -91,28 +74,9 @@ const Login = () => {
               Se connecter
             </button>
           </div>
+        
           <div>
-            <GoogleLogin
-              clientId={clientId}
-              render={(renderProps) => (
-                <button
-                  style={{ width: "100%", background: "var(--color-primary)", color: "#fff", marginTop: "3px" }}
-                  className="s-btn"
-                  color="danger"
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                >
-                  <AiFillGoogleCircle className="me-2" fab icon="google" />{" "}
-                  Google Sign In
-                </button>
-              )}
-              onSuccess={googleSuccess}
-              onFailure={googleFailure}
-              cookiePolicy="single_host_origin"
-            />
-          </div>
-          <div>
-            <Link to="/register" style={{ fontSize: "12px" }}>
+            <Link to="/register"  style={{ fontSize: "14px" }}>
               <p>Pas de compte ? S'inscrire</p>
             </Link>
           </div>
@@ -153,9 +117,10 @@ const SectionJobsStyled = styled.section`
       cursor: pointer;
       border-radius: 7px;
       width: 100%;
+      margin: 5px;
       transition: all 0.4s ease-in-out;
       &:hover {
-        background-color: var(--color-primary);
+        background-color: var(--color-primary-dark);
       }
     }
   }

@@ -106,7 +106,7 @@ const Register = () => {
           </div>
 
           <div>
-            <Link to="/login" style={{ fontSize: "12px" }}>
+            <Link to="/login" style={{ fontSize: "14px" }}>
               Déjà un compte ? Se connecter
             </Link>
           </div>
@@ -146,9 +146,10 @@ const SectionJobsStyled = styled.section`
       padding: 1.1rem 1rem;
       cursor: pointer;
       border-radius: 7px;
+      margin: 5px;
       transition: all 0.4s ease-in-out;
       &:hover {
-        background-color: var(--color-primary);
+        background-color: var(--color-primary-dark);
       }
     }
   }

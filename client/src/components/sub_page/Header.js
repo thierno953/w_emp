@@ -47,7 +47,8 @@ const NavStyled = styled.header`
       font-size: 6rem;
       span {
         font-size: 6rem;
-        color: var(--color-primary);
+        color: #1a4483;
+        fill-opacity: 1;
       }
     }
       p {
