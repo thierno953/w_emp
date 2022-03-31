@@ -40,18 +40,17 @@ function SectionFooter() {
             <h4 className="f-title">Besoin d’un service </h4>
 
             <li className="nav-item">
-              
-              <p>thiernobarry554@gmail.com</p><br /><br />
+              <p>thiernobarry554@gmail.com</p>
+              <br />
               <p>+32 466 240 103</p>
-              
             </li>
           </ul>
           <ul>
             <h4 className="f-title">Infos</h4>
             <li className="nav-item">
               <p>
-                Proposition établie par un Jobber en <br /><br /> réponse à un Besoin
-                d'un Posteur.
+                Proposition établie par un Jobber  <br />
+                <br />en réponse à un Besoin d'un Posteur.
               </p>
             </li>
           </ul>
@@ -72,7 +71,7 @@ const SectionFooterStyled = styled.footer`
   .f-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
+
     @media screen and (max-width: 1242px) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -99,7 +98,8 @@ const SectionFooterStyled = styled.footer`
     }
 
     li {
-      a, p {
+      a,
+      p {
         transition: all 0.3s ease-in-out;
         color: #d8dadf;
         font-size: 14px;

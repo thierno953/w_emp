@@ -14,7 +14,7 @@ const Loading = () => {
   }, [count, navigate]);
   return (
     <div style={{ marginTop: "100px", textAlign: "center", minHeight: "50vh", fontSize: "18px" }}>
-      <h5>Redirecting you in {count} seconds</h5>
+      <h5>Vous rediriger en {count} seconds</h5>
     </div>
   );
 };

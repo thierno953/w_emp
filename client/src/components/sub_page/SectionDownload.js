@@ -53,9 +53,13 @@ const SectionDownloadStyled = styled.section`
     align-items: center;
     justify-content: center;
     text-align: center;
+    h2 {
+      font-size: 2rem;
+      padding-top: 3rem;
+    }
     h3 {
       font-size: 1.5rem;
-      padding-top: 2rem;
+      padding-top: 3rem;
     }
   }
 
@@ -70,9 +74,9 @@ const SectionDownloadStyled = styled.section`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #fff;
+      background-color: #fff;;
       a {
-        font-weight: 500;
+        font-size: 14px;
       }
     }
     .apple {

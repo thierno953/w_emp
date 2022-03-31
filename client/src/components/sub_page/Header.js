@@ -13,7 +13,7 @@ const Header = () => {
             Trouve un <span>service</span> deviens <br />
             jobber
           </h1>
-          <p className="main-para">Trouves ton service et rend service</p>
+          <p>Trouves ton service et rend service</p>
 
           <Link to="/people">De quel service avez vous besoin ?</Link>
         </div>
@@ -25,7 +25,7 @@ const Header = () => {
 const NavStyled = styled.header`
   height: 10vh;
   line-height: 10vh;
-  min-height: 100vh;
+  min-height: 80vh;
   object-fit: cover;
   position: relative;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
@@ -33,24 +33,26 @@ const NavStyled = styled.header`
 
   .header-content {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 60%;
     @media screen and (max-width: 1187px) {
       width: 80%;
+   
     }
     h1 {
       color: var( --color-neutral-3);
-      font-size: 3rem;
+      font-size: 6rem;
       span {
-        font-size: 4rem;
+        font-size: 6rem;
         color: var(--color-primary);
       }
     }
       p {
-        font-size: 14px;
+        font-size: 18px;
+        color: var( --color-neutral-3);
       }
       a {
         background: hsl(210, 22%, 49%);
@@ -59,6 +61,7 @@ const NavStyled = styled.header`
         font-weight: 500;
         margin-bottom: 14px;
         border-radius: 7px;
+        font-size: 13px;
         &:hover {
           background-color: var(--color-primary);
         }
@@ -68,6 +71,19 @@ const NavStyled = styled.header`
         font-size: 2rem;
         span {
           font-size: 3rem;
+        }
+        h1 {
+          font-size: 3rem;
+          span {
+            font-size: 3rem;
+    
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+        a {
+          font-size: 10px;
         }
       }
   

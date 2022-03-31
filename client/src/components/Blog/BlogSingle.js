@@ -60,7 +60,7 @@ const BlogSingle = () => {
 
 const BlogSection = styled.section`
   min-height: 20vh;
-
+  color: var(--color-dark);
   .container_image {
     .image1 {
       width: 100%;
@@ -83,16 +83,17 @@ const BlogSection = styled.section`
     }
     h2 {
       text-align: center;
+      font-size: 16px;
     }
 
     h3 {
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
       text-align: left;
       margin-top: 5px;
     }
     h4 {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       margin-top: 10px;
       span {

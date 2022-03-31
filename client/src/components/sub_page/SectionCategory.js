@@ -41,8 +41,8 @@ const SectionCategoryStyled = styled.section`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     gap: 20px;
-    padding-top: 1rem;
-    font-size: 16px;
+    padding-top: 3rem;
+    font-size: 18px;
 
     @media screen and (max-width: 822px) {
       grid-template-columns: 1fr;

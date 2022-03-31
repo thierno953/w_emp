@@ -13,7 +13,7 @@ function Title({ name, para }) {
 const TitleStyled = styled.div`
   h3 {
     color: var(--color-dark);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
   }
   p {

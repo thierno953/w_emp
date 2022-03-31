@@ -106,13 +106,15 @@ const JobCardStyled = styled.div`
     }
     .gain {
       padding-bottom: 15px;
+      color: var(--color-dark);
       h6 {
-        font-weight: 500;
+   
         font-size: 14px;
       }
       span {
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
+    
       }
     }
     .c-title {
