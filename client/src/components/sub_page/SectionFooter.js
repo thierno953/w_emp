@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { InnerLayout } from "../../Layouts";
 /*eslint-disable*/
 
+/*eslint-disable*/
 function SectionFooter() {
   return (
     <SectionFooterStyled>
@@ -49,8 +50,9 @@ function SectionFooter() {
             <h4 className="f-title">Infos</h4>
             <li className="nav-item">
               <p>
-                Proposition établie par un Jobber  <br />
-                <br />en réponse à un Besoin d'un Posteur.
+                Proposition établie par un Jobber <br />
+                <br />
+                en réponse à un Besoin d'un Posteur.
               </p>
             </li>
           </ul>
@@ -71,6 +73,7 @@ const SectionFooterStyled = styled.footer`
   .f-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding-top: 2.5rem;
 
     @media screen and (max-width: 1242px) {
       grid-template-columns: repeat(3, 1fr);
@@ -88,10 +91,11 @@ const SectionFooterStyled = styled.footer`
     p {
       color: #d8dadf;
       line-height: 1rem;
+      padding-top: 1rem;
     }
 
     .f-title {
-      padding-bottom: 1rem;
+      padding-top: 1rem;
       font-size: 1rem;
       cursor: default;
       color: var(--color-white);

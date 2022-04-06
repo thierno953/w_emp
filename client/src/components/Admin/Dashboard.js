@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import {
@@ -96,6 +95,7 @@ const Dashboard = () => {
 
 const SectionJobsStyled = styled.section`
   background-color: var(--color-neutral-3);
+  min-height: 60vh;
   .dash_flex {
     display: grid;
     grid-template-columns: 300px 1fr;

@@ -12,7 +12,7 @@ const Sidebar = () => {
         <div className='add'>
         <Link to="/addPerson">Add</Link>
         </div>
-        <div className='add' style={{ display: "none" }}>
+        <div className='add'>
         <Link to="/persons/search">Private</Link>
         </div>
     </div>

@@ -88,6 +88,7 @@ const Login = () => {
 };
 
 const SectionJobsStyled = styled.section` 
+min-height: 60vh;
 .right {
   display: flex;
   align-items: center;

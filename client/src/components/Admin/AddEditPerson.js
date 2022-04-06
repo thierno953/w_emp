@@ -167,6 +167,13 @@ const AddEditPerson = () => {
 };
 
 const SectionJobsStyled = styled.section` 
+.add_flex {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.5rem;
+  @media screen and (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
 .right {
   display: flex;
   align-items: center;
@@ -178,7 +185,8 @@ const SectionJobsStyled = styled.section`
     h3 {
       text-align: center;
     }
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       font-family: inherit;
       font-size: 14px;
@@ -200,6 +208,7 @@ const SectionJobsStyled = styled.section`
       }
     }
   }
+}
 }
 `;
 

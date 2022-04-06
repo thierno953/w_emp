@@ -81,12 +81,11 @@
     display: block;
     position: absolute;
     list-style: none;
-    background-color: #272a33;
+    background-color: #fff;
     left: 0;
     top: 60px;
     width: 100%;
     transition: all 0.3s;
-    border-top: 1px solid #fff;
     padding-bottom: 5px;
   }
 
@@ -120,7 +119,6 @@
   .navbar #nav-links-mobile-hide li {
     text-align: center;
     padding: 10px 0;
-    border-bottom: 1px solid #fff;
     margin: 0 30px;
   }
 
@@ -129,7 +127,7 @@
   }
 
   .navbar #nav-links-mobile li a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 14px;
   }

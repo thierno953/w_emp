@@ -24,7 +24,7 @@ function About() {
 const SectionAbout = styled.section`
   max-width: 1000px;
   margin: auto;
-  min-height: 50vh;
+  min-height: 60vh;
   padding-top: 50px;
   .about {
     .about_flex {
