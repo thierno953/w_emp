@@ -47,7 +47,7 @@ const NavStyled = styled.header`
       font-size: 6rem;
       span {
         font-size: 6rem;
-        color: #1a4483;
+        color: #56d01e;
         fill-opacity: 1;
       }
     }
@@ -56,7 +56,7 @@ const NavStyled = styled.header`
         color: var( --color-neutral-3);
       }
       a {
-        background: hsl(210, 22%, 49%);
+        background: #3ba30a;
         color: var(--color-white);
         padding: 12px;
         font-weight: 500;

@@ -54,12 +54,14 @@ const SectionDownloadStyled = styled.section`
     justify-content: center;
     text-align: center;
     h2 {
-      font-size: 2rem;
-      padding-top: 3rem;
+      font-size: 3rem;
+      padding-top: 2rem;
+      color: #fff
     }
     h3 {
       font-size: 1.5rem;
       padding-top: 3rem;
+      color: #fff
     }
   }
 

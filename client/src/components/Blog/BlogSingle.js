@@ -82,8 +82,8 @@ const BlogSection = styled.section`
       }
     }
     h2 {
-      text-align: center;
-      font-size: 16px;
+      font-size: 25px;
+      margin-top: 8px;
     }
 
     h3 {

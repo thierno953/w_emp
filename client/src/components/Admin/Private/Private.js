@@ -141,7 +141,7 @@ const Private = () => {
 
 const SectionJobsStyled = styled.section`
   background-color: var(--color-neutral-3);
-  min-height: 30vh;
+  min-height: 60vh;
   .dash_flex {
     display: grid;
     grid-template-columns: 300px 1fr;

@@ -86,7 +86,7 @@ const AddEditPerson = () => {
         <Sidebar />
         <div className="right">
           <form onSubmit={handleSubmit} className="input-control">
-            <h3>{id ? "Update" : "Add"}</h3>
+            <h3>{id ? "Modifier" : "Ajouter"}</h3>
 
             <div>
               <input

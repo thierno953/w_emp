@@ -48,7 +48,7 @@ const Dashboard = () => {
         {userPersons.length > 0 && (
           <>
             <h4 className="text-center" style={{ textAlign: "center" }}>
-              Dashboard: {user?.result?.name}
+              Espace de : {user?.result?.name}
             </h4>
           </>
         )}
